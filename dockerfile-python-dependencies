@@ -1,0 +1,18 @@
+# Use the official Python base image (latest Python version)
+FROM python
+
+# Set the working directory inside the container to /app
+WORKDIR /app
+
+# Copy the requirements.txt file from your local machine to the container's /app directory
+COPY requirements.txt .
+
+# Install Python dependencies listed in requirements.txt inside the container
+RUN pip install -r requirements.txt
+
+# Copy the Python application script into the container's /app directory
+COPY app.py .
+
+# Set the default command to run the Python script when the container starts
+CMD ["python", "app.py"]
+

@@ -1,0 +1,14 @@
+# Use the official Python image as the base
+FROM python:3.11-slim
+
+# Set the working directory inside the container to /app
+WORKDIR /app
+
+# Copy the local script 'app.py' into the /app directory in the container
+COPY app.py .
+
+# Set the default command to run when the container starts
+# This tells Docker to run the script using Python
+CMD ["python", "app.py"]
+
+
